@@ -7,3 +7,4 @@
 
 Open-Source DJANGO CRM gives freedom to businesses to customize and change the CRM as per their needs.
 This system will allow you to manage projects both for personal purposes and for the purposes of the organization. You can try the functionality of the TODO board here: https://redmooner.github.io/simple-crm-django/
+![alt text](https://github.com/RedMooner/simple-crm-django/blob/main/example.png)
