@@ -1,5 +1,8 @@
 from django.shortcuts import render
+from .models import TodoChild
+
 
 # Create your views here.
 def index(request):
-        return render(request,'board.html')
+    todos = TodoChild.objects.all()
+    return render(request, "board.html", {"list": todos})

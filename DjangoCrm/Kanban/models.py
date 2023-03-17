@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User # new
+from django.contrib.auth.models import User  # new
 
 
 # Create your models here.
@@ -9,3 +9,9 @@ class TodoChild(models.Model):
 
     def __unicode__(self):
         return self.user.id
+
+    def __str__(self):
+        return self.title
+    class Meta:
+        verbose_name = 'Спиоск дел'
+        verbose_name_plural = 'Сипсок дел'
