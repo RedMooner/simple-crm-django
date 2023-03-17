@@ -14,9 +14,10 @@
 
 <body>
   <div class="board">
-    <form id="todo-form">
-      <input type="text" placeholder="New TODO..." id="todo-input" />
-      <button type="submit">Add +</button>
+    <form id="todo-form" method="post" action="posttodo">
+      {% csrf_token %}
+      <input type="text" name="title" placeholder="New TODO..." id="todo-input" />
+      <button type="submit" value="Send">Add +</button>
     </form>
 
     <div class="lanes">
