@@ -12,11 +12,35 @@
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
   <script src="{% static 'js/drag.js' %}" defer></script>
   <script src="{% static 'js/todo.js' %}" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+    crossorigin="anonymous"></script>
   <script src="{% static 'js/background.js' %}" defer></script>
   <script src="{% static 'js/jquery-3.6.4.min.js' %}"></script>
 </head>
 
 <body>
+  <!-- Modal -->
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="board">
     <form id="todo-form" method="post" action="posttodo">
       {% csrf_token %}
@@ -30,6 +54,9 @@
         {% for todo in list %}
         <div class="task" draggable="true">
           <span class="card__tag card__tag--browser">Browser</span>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Launch demo modal
+          </button>
           <h5 class="card__title"> {{ todo.title }}</h5>
           <p class="description">{{ todo.description }}</p>
           <div class="separator"></div>
@@ -54,6 +81,7 @@
       </div>
     </div>
   </div>
+
 </body>
 
 </html>
