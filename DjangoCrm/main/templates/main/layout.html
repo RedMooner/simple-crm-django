@@ -13,33 +13,21 @@
 </head>
 
 <body>
-    {% if user.is_authenticated %}
-    <p>Hi {{ user.username }}!</p>
-    {% else %}
-    <p>You are not logged in.</p>
-    <a href="{% url 'login' %}">Log In</a>
-    {% endif %}
+    <header>
+        <div class="user-info">
+            {% if user.is_authenticated %}
+            <p>Hi {{ user.username }}!</p>
+            {% else %}
+            <p>You are not logged in.</p>
+            <a href="{% url 'login' %}">Log In</a>
+            {% endif %}
 
-    {% if user.is_authenticated %}
-    <p>Hi {{ user.username }}!</p>
-    <p><a href="{% url 'logout' %}">Log out</a></p>
-    {% endif %}
-    <aside>
-        <img src="{% static 'main/img/logo.png' %}" alt="Логотип">
-        <span class="logo">Django Simple CRM</span>
-        <h3>Навигация</h3>
-        <ul>
-            <a href="">
-                <li>Главная</li>
-            </a>
-            <a href="">
-                <li>Главная</li>
-            </a>
-            <a href="">
-                <li>Главная</li>
-            </a>
-        </ul>
-    </aside>
+            {% if user.is_authenticated %}
+            <p>Hi {{ user.username }}!</p>
+            <p><a href="{% url 'logout' %}">Log out</a></p>
+            {% endif %}
+        </div>
+    </header>
     {% block content %}
     {% endblock %}
 </body>
